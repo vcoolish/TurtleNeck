@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PermissionsActivity">
+
+    <Switch
+        android:id="@+id/location_toggle"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/bt_toggle"
+        android:layout_centerHorizontal="true"
+        android:text="Location" />
+
+    <Switch
+        android:id="@+id/bt_toggle"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="187dp"
+        android:text="Bluetooth" />
+
+    <Switch
+        android:id="@+id/notification_toggle"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/bt_toggle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-187dp"
+        android:text="Notifications" />
+
+
+</RelativeLayout>
