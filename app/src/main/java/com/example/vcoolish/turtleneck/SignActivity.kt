@@ -20,28 +20,31 @@ class SignActivity : AppCompatActivity() {
         AppEventsLogger.activateApp(this)
         callbackManager = CallbackManager.Factory.create()
         val loginButton = findViewById(R.id.login_button) as LoginButton
-        loginButton.setReadPermissions("email")
+        loginButton.setOnClickListener { startActivity(Intent(applicationContext, MainActivity::class.java))}
 
-        val accessToken = AccessToken.getCurrentAccessToken()
-        val isLoggedIn = accessToken == null
-        val isExpired = accessToken?.isExpired
+        }
+//        loginButton.setReadPermissions("email")
+//
+//        val accessToken = AccessToken.getCurrentAccessToken()
+//        val isLoggedIn = accessToken == null
+//        val isExpired = accessToken?.isExpired
+//
+//        loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
+//            override fun onSuccess(loginResult: LoginResult) {
+//                Toast.makeText(applicationContext,"Success", Toast.LENGTH_LONG).show()
+//                startActivity(Intent(applicationContext, MainActivity::class.java))}
+//
+//            override fun onCancel() {
+//                Toast.makeText(applicationContext,"Cancel", Toast.LENGTH_LONG).show()            }
+//
+//            override fun onError(exception: FacebookException) {
+//                Toast.makeText(applicationContext,"Error", Toast.LENGTH_LONG).show()
+//            }
+//        })
+//    }
 
-        loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
-            override fun onSuccess(loginResult: LoginResult) {
-                Toast.makeText(applicationContext,"Success", Toast.LENGTH_LONG).show()
-                startActivity(Intent(applicationContext, AlrmActivity::class.java))}
-
-            override fun onCancel() {
-                Toast.makeText(applicationContext,"Cancel", Toast.LENGTH_LONG).show()            }
-
-            override fun onError(exception: FacebookException) {
-                Toast.makeText(applicationContext,"Error", Toast.LENGTH_LONG).show()
-            }
-        })
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        callbackManager.onActivityResult(requestCode, resultCode, data)
-        super.onActivityResult(requestCode, resultCode, data)
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+//        callbackManager.onActivityResult(requestCode, resultCode, data)
+//        super.onActivityResult(requestCode, resultCode, data)
+//    }
 }
